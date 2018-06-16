@@ -9,17 +9,20 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {FormsModule} from "@angular/forms";
+import {UsuarioService} from "../servicios/usuario.service";
+import {MostrarUsuarioComponent} from "../componentes/mostrar-usuario.component";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage, MostrarUsuarioComponent,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    FormsModule,
+    FormsModule, HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,7 +32,7 @@ import {FormsModule} from "@angular/forms";
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen, UsuarioService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
